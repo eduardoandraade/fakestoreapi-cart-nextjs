@@ -9,6 +9,7 @@ interface ProductProps {
     title: string;
     price: number;
     image: string;
+    category: string;
   };
 }
 
@@ -56,6 +57,7 @@ export default function ProductCard({ product }: ProductProps) {
       
       {/* Informações do Produto */}
       <div className="pt-8 text-left">
+        <p className="text-sm text-gray-500 font-medium">{product.category.replace(/^./, (char) => char.toUpperCase())}</p>
         <h3 className="text-lg font-semibold">{product.title}</h3>
         <p className="text-orange-500 font-bold">R${product.price.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
       </div>
